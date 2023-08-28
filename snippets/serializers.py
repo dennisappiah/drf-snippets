@@ -47,7 +47,8 @@ It would be nice if we could keep our code a bit more concise.
 1. An automatically determined set of fields.
 2. Simple default implementations for the create() and update() methods.
 
-- However, we still can override the create(), update() methods to implement certain functionalities
+- However, we still can override the create(), update() methods to implement certain functionalities on our model instance
+before save
 """
 
 
