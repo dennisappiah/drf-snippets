@@ -1,0 +1,23 @@
+""" Django automatically generates a new attribute in the Promotion & Collection model with the child model as a 
+prefix. In our case, `product_set` which can be renamed in the child model(Product) using the related_name
+attribute . In our case `products` NB: it is an field of the Promotion & Collection (parent) model
+"""
+
+"""There is a circular relationship between Collection and Product
+1. Collection have many products 
+2. A product can belong to only collection
+"""
+
+
+"""
+LikedItem:
+    - what user likes what object (product, video, )
+    - user: ForeignKey to the User Model
+"""
+
+
+class LikedItem(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey()
