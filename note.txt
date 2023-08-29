@@ -8,7 +8,7 @@ attribute . In our case `products` NB: it is an field of the Promotion & Collect
 2. A product can belong to only collection
 """
 
-
+# date is auto-populated with the current date for the first time Order object is created
 """
 LikedItem:
     - what user likes what object (product, video, )
